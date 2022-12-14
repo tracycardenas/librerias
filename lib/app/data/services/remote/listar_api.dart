@@ -5,15 +5,7 @@ class ListarApi {
   static Dio dio = Dio();
 
   static void configureDio() {
-    //base de url desarrollo
-    //dio.options.baseUrl = 'http://localhost:8080/api';
-    //base url Aprodución
-    dio.options.baseUrl = 'http://192.168.1.27:8080/demoapp/rs';
-    //Configurar headers
-    dio.options.headers = {
-      // 'x-token': ' Aqui va el token',
-      // 'Content-Type': 'multipart/form-data'
-    };
+    dio.options.baseUrl = 'http://34.176.83.39:8080/demoapp/rs';
   }
 
   Future<List<Libro>?> getList() async {
@@ -30,7 +22,7 @@ class ListarApi {
           throw (e.response!.data['msg']);
         }
       } else {
-        throw ('Error en el Upload Image');
+        throw ('Error');
       }
     }
     print(result);
